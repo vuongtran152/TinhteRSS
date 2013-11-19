@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3392D62E1837FCC900F462CF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3392D62D1837FCC900F462CF /* FacebookSDK.framework */; };
+		3392D6C21838F90800F462CF /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3392D6C11838F90800F462CF /* ViewController2.m */; };
 		33A3EC7B1835670E00A8E965 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A3EC7A1835670E00A8E965 /* Foundation.framework */; };
 		33A3EC7D1835670E00A8E965 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A3EC7C1835670E00A8E965 /* CoreGraphics.framework */; };
 		33A3EC7F1835670E00A8E965 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A3EC7E1835670E00A8E965 /* UIKit.framework */; };
@@ -21,6 +23,17 @@
 		33A3EC9C1835670E00A8E965 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A3EC7E1835670E00A8E965 /* UIKit.framework */; };
 		33A3ECA41835670E00A8E965 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33A3ECA21835670E00A8E965 /* InfoPlist.strings */; };
 		33A3ECA61835670E00A8E965 /* TinhteRSSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A3ECA51835670E00A8E965 /* TinhteRSSTests.m */; };
+		33A3ECB218356A1700A8E965 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A3ECB118356A1700A8E965 /* logo.png */; };
+		33BCC25D1836DDDA002BD0CE /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BCC25C1836DDDA002BD0CE /* loading.png */; };
+		33BCC25F1836EE06002BD0CE /* RSS.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BCC25E1836EE06002BD0CE /* RSS.png */; };
+		33BCC26818375D0C002BD0CE /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 33BCC26718375D0C002BD0CE /* icon120.png */; };
+		33E2EFEA183BEBEA0057ABE2 /* left in Resources */ = {isa = PBXBuildFile; fileRef = 33E2EFE8183BEBEA0057ABE2 /* left */; };
+		33E2EFEB183BEBEA0057ABE2 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E2EFE9183BEBEA0057ABE2 /* right.png */; };
+		33F6A885183A8AEB00AB76D9 /* DescriptionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A882183A8AEB00AB76D9 /* DescriptionParser.m */; };
+		33F6A886183A8AEB00AB76D9 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A884183A8AEB00AB76D9 /* XMLParser.m */; };
+		33F6A888183AA22100AB76D9 /* haveNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F6A887183AA22100AB76D9 /* haveNew.png */; };
+		33F6A88A183AB56600AB76D9 /* noConnectionIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33F6A889183AB56600AB76D9 /* noConnectionIcon.png */; };
+		33F6A88D183ABA7000AB76D9 /* StringToMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F6A88C183ABA7000AB76D9 /* StringToMD5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3392D62D1837FCC900F462CF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		3392D6C01838F90800F462CF /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		3392D6C11838F90800F462CF /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		33A3EC771835670E00A8E965 /* TinhteRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinhteRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A3EC7A1835670E00A8E965 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33A3EC7C1835670E00A8E965 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +69,20 @@
 		33A3ECA11835670E00A8E965 /* TinhteRSSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinhteRSSTests-Info.plist"; sourceTree = "<group>"; };
 		33A3ECA31835670E00A8E965 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		33A3ECA51835670E00A8E965 /* TinhteRSSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinhteRSSTests.m; sourceTree = "<group>"; };
+		33A3ECB118356A1700A8E965 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		33BCC25C1836DDDA002BD0CE /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		33BCC25E1836EE06002BD0CE /* RSS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RSS.png; sourceTree = "<group>"; };
+		33BCC26718375D0C002BD0CE /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
+		33E2EFE8183BEBEA0057ABE2 /* left */ = {isa = PBXFileReference; lastKnownFileType = file; path = left; sourceTree = "<group>"; };
+		33E2EFE9183BEBEA0057ABE2 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		33F6A881183A8AEB00AB76D9 /* DescriptionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionParser.h; sourceTree = "<group>"; };
+		33F6A882183A8AEB00AB76D9 /* DescriptionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionParser.m; sourceTree = "<group>"; };
+		33F6A883183A8AEB00AB76D9 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		33F6A884183A8AEB00AB76D9 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		33F6A887183AA22100AB76D9 /* haveNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haveNew.png; sourceTree = "<group>"; };
+		33F6A889183AB56600AB76D9 /* noConnectionIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noConnectionIcon.png; sourceTree = "<group>"; };
+		33F6A88B183ABA7000AB76D9 /* StringToMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringToMD5.h; sourceTree = "<group>"; };
+		33F6A88C183ABA7000AB76D9 /* StringToMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringToMD5.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3392D62E1837FCC900F462CF /* FacebookSDK.framework in Frameworks */,
 				33A3EC7D1835670E00A8E965 /* CoreGraphics.framework in Frameworks */,
 				33A3EC7F1835670E00A8E965 /* UIKit.framework in Frameworks */,
 				33A3EC7B1835670E00A8E965 /* Foundation.framework in Frameworks */,
@@ -101,6 +132,7 @@
 		33A3EC791835670E00A8E965 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3392D62D1837FCC900F462CF /* FacebookSDK.framework */,
 				33A3EC7A1835670E00A8E965 /* Foundation.framework */,
 				33A3EC7C1835670E00A8E965 /* CoreGraphics.framework */,
 				33A3EC7E1835670E00A8E965 /* UIKit.framework */,
@@ -112,11 +144,27 @@
 		33A3EC801835670E00A8E965 /* TinhteRSS */ = {
 			isa = PBXGroup;
 			children = (
+				33E2EFE8183BEBEA0057ABE2 /* left */,
+				33E2EFE9183BEBEA0057ABE2 /* right.png */,
+				33F6A88B183ABA7000AB76D9 /* StringToMD5.h */,
+				33F6A88C183ABA7000AB76D9 /* StringToMD5.m */,
+				33F6A889183AB56600AB76D9 /* noConnectionIcon.png */,
+				33F6A887183AA22100AB76D9 /* haveNew.png */,
+				33F6A881183A8AEB00AB76D9 /* DescriptionParser.h */,
+				33F6A882183A8AEB00AB76D9 /* DescriptionParser.m */,
+				33F6A883183A8AEB00AB76D9 /* XMLParser.h */,
+				33F6A884183A8AEB00AB76D9 /* XMLParser.m */,
+				33BCC26718375D0C002BD0CE /* icon120.png */,
+				33BCC25E1836EE06002BD0CE /* RSS.png */,
+				33A3ECB118356A1700A8E965 /* logo.png */,
+				33BCC25C1836DDDA002BD0CE /* loading.png */,
 				33A3EC891835670E00A8E965 /* AppDelegate.h */,
 				33A3EC8A1835670E00A8E965 /* AppDelegate.m */,
 				33A3EC8C1835670E00A8E965 /* Main.storyboard */,
 				33A3EC8F1835670E00A8E965 /* ViewController.h */,
 				33A3EC901835670E00A8E965 /* ViewController.m */,
+				3392D6C01838F90800F462CF /* ViewController2.h */,
+				3392D6C11838F90800F462CF /* ViewController2.m */,
 				33A3EC921835670E00A8E965 /* Images.xcassets */,
 				33A3EC811835670E00A8E965 /* Supporting Files */,
 			);
@@ -228,6 +276,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33BCC25F1836EE06002BD0CE /* RSS.png in Resources */,
+				33E2EFEA183BEBEA0057ABE2 /* left in Resources */,
+				33E2EFEB183BEBEA0057ABE2 /* right.png in Resources */,
+				33BCC25D1836DDDA002BD0CE /* loading.png in Resources */,
+				33F6A88A183AB56600AB76D9 /* noConnectionIcon.png in Resources */,
+				33A3ECB218356A1700A8E965 /* logo.png in Resources */,
+				33BCC26818375D0C002BD0CE /* icon120.png in Resources */,
+				33F6A888183AA22100AB76D9 /* haveNew.png in Resources */,
 				33A3EC931835670E00A8E965 /* Images.xcassets in Resources */,
 				33A3EC851835670E00A8E965 /* InfoPlist.strings in Resources */,
 				33A3EC8E1835670E00A8E965 /* Main.storyboard in Resources */,
@@ -249,8 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F6A886183A8AEB00AB76D9 /* XMLParser.m in Sources */,
+				3392D6C21838F90800F462CF /* ViewController2.m in Sources */,
 				33A3EC911835670E00A8E965 /* ViewController.m in Sources */,
 				33A3EC8B1835670E00A8E965 /* AppDelegate.m in Sources */,
+				33F6A885183A8AEB00AB76D9 /* DescriptionParser.m in Sources */,
+				33F6A88D183ABA7000AB76D9 /* StringToMD5.m in Sources */,
 				33A3EC871835670E00A8E965 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,8 +436,11 @@
 		33A3ECAA1835670E00A8E965 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/han/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinhteRSS/TinhteRSS-Prefix.pch";
 				INFOPLIST_FILE = "TinhteRSS/TinhteRSS-Info.plist";
@@ -389,8 +452,11 @@
 		33A3ECAB1835670E00A8E965 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/han/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TinhteRSS/TinhteRSS-Prefix.pch";
 				INFOPLIST_FILE = "TinhteRSS/TinhteRSS-Info.plist";
@@ -460,6 +526,7 @@
 				33A3ECAB1835670E00A8E965 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33A3ECAC1835670E00A8E965 /* Build configuration list for PBXNativeTarget "TinhteRSSTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +535,7 @@
 				33A3ECAE1835670E00A8E965 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
