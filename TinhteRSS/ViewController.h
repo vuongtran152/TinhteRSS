@@ -26,6 +26,7 @@
     IBOutlet UIButton *newButton;
     IBOutlet UIImageView *leftImage;
     IBOutlet UIImageView *rightImage;
+    IBOutlet UIPinchGestureRecognizer *zoomPinchGesture;
 }
 // property to hold a reference to the delegate
 @property (assign) int page;

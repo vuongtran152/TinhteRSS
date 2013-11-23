@@ -194,4 +194,13 @@
 -(void) loadNew:(id) sender{
     
 }
+
+- (IBAction)pictureZoom:(id)sender {
+    if ([zoomPinchGesture scale]<1.0f) {
+        [zoomPinchGesture setScale:1.0f];
+    }
+    CGAffineTransform transform = CGAffineTransformMakeScale([zoomPinchGesture scale],  [zoomPinchGesture scale]);
+    imageContentView.transform = transform;
+}
+
 @end
