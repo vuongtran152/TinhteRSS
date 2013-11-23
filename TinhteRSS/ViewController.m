@@ -67,44 +67,47 @@
 }
 
 -(void) loadPage{
-    NSLog(@"page %i",_pagenum);
-    [titleLabel setText:[titles objectAtIndex:_pagenum]];
-    [contentView loadHTMLString:[contents objectAtIndex:_pagenum] baseURL:nil];
-    if ([imagesCache objectForKey:[images objectAtIndex:_pagenum]]==NULL) {
-        UIImage *loading = [UIImage imageNamed:@"loading.png"];
-        [imageContentView setImage:loading];
-        [self performSelectorInBackground:@selector(getImage:) withObject:nil];
+    @autoreleasepool {
+        NSLog(@"page %i",_pagenum);
+        [titleLabel setText:[titles objectAtIndex:_pagenum]];
+        [contentView loadHTMLString:[contents objectAtIndex:_pagenum] baseURL:nil];
+        if ([imagesCache objectForKey:[images objectAtIndex:_pagenum]]==NULL) {
+            UIImage *loading = [UIImage imageNamed:@"loading.png"];
+            [imageContentView setImage:loading];
+            [self performSelectorInBackground:@selector(getImage:) withObject:nil];
+        }
+        else{
+            UIImage *imgTMP = [imagesCache objectForKey:[images objectAtIndex:_pagenum]];
+            [imageContentView setImage:imgTMP];
+        }
     }
-    else{
-        UIImage *imgTMP = [imagesCache objectForKey:[images objectAtIndex:_pagenum]];
-        [imageContentView setImage:imgTMP];
-    }
-    }
+    
+}
 
 
 -(void) getImage:(id) sender{
-   //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSString *url = [images objectAtIndex:_pagenum];
-    NSString *nameImage = [[[StringToMD5 alloc] init] MD5String:url];
-  //  NSData *getImageFLink = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
-    NSData *getImageFLink = [[NSData alloc] initWithContentsOfFile:[NSString stringWithFormat:@"/tmp/Image%@",nameImage]];
-    if(getImageFLink==nil){
-        getImageFLink = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
-        [getImageFLink writeToFile:[NSString stringWithFormat:@"/tmp/Image%@",nameImage] atomically:NO];
+    @autoreleasepool {
+        NSString *url = [images objectAtIndex:_pagenum];
+        NSString *nameImage = [[[StringToMD5 alloc] init] MD5String:url];
+        NSData *getImageFLink = [[NSData alloc] initWithContentsOfFile:[NSString stringWithFormat:@"/tmp/Image%@",nameImage]];
+        if(getImageFLink==nil){
+            getImageFLink = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
+            [getImageFLink writeToFile:[NSString stringWithFormat:@"/tmp/Image%@",nameImage] atomically:NO];
+        }
+        if(getImageFLink!=nil){
+            UIImage *imgTMP = [[UIImage alloc] initWithData:getImageFLink];
+            [imageContentView setImage:imgTMP];
+        }
+        else{
+            UIImage *imageNoConnection = [UIImage imageNamed:@"noConnectionIcon.png"];
+            [imageContentView setImage:imageNoConnection];
+            NSLog(@"no Image saved and not connect to server!");
+        }
+        if (_pagenum<images.count-1) {
+            [self repairImage];
+        }
     }
-    if(getImageFLink!=nil){
-        UIImage *imgTMP = [[UIImage alloc] initWithData:getImageFLink];
-        [imageContentView setImage:imgTMP];
-    }
-    else{
-        UIImage *imageNoConnection = [UIImage imageNamed:@"noConnectionIcon.png"];
-        [imageContentView setImage:imageNoConnection];
-        NSLog(@"no Image saved and not connect to server!");
-    }
-    if (_pagenum<images.count-1) {
-        [self repairImage];
-    }
-
+    
 }
 -(void)repairImage{
     @autoreleasepool {

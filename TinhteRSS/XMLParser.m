@@ -11,6 +11,8 @@
 
 @implementation XMLParser
 
+// check connection
+
 -(BOOL)haveConnection{
     NSLog(@"checkConnection:");
     connection = YES;
@@ -24,6 +26,9 @@
     NSLog(@"%i",connection);
     return connection;
 }
+
+// parse RSS
+
 -(BOOL)parse{
     NSLog(@"parse:");
     if (![self haveDataSaved]) {
@@ -44,7 +49,7 @@
     return YES;
 }
 
-/* check for new RSS*/
+// check new RSS
 
 -(BOOL)haveNewRSS
 {
@@ -58,7 +63,7 @@
     return  !([publicDate isEqualToString:oldPublicDate]);
 }
 
-/* check have datasaved */
+// check datasaved
 
 -(BOOL)haveDataSaved{
     NSLog(@"haveDataSaved:");
@@ -67,9 +72,9 @@
     return  [[uDefaults objectForKey:@"haveData"] isEqualToString:@"YES"];
 }
 
-/*   end   */
  
-/* save title, image, content, link to userdefaults */
+// save title, image, content, link to userdefaults
+
 -(void)saveData{
     NSLog(@"saveData:");
     [uDefaults setObject:titles forKey:@"Keytitles"];
@@ -81,9 +86,7 @@
     [uDefaults synchronize];
 }
 
-/*   end   */
-
-/* load title, image, content, link from userdefaults */
+// load title, image, content, link from userdefaults
 
 -(void)loadData{
     titles = [uDefaults objectForKey:@"Keytitles"];
@@ -92,10 +95,8 @@
     contents = [uDefaults objectForKey:@"Keycontents"];
 }
 
-/*   end   */
 
-
-/* parse RSS */
+// parse RSS
 
 -(BOOL)parserXML{
 
@@ -107,30 +108,26 @@
     titles = [[NSMutableArray alloc] init];
     descriptions = [[NSMutableArray alloc] init];
     
-    /* save publicDate */
+    // save publicDate
     
      NSString *publicDate = [[NSString alloc] initWithData:XMLdata encoding:NSASCIIStringEncoding];
      publicDate =[publicDate substringWithRange:NSMakeRange(500,31)];
      [uDefaults setObject:publicDate forKey:@"publicDate"];
      [uDefaults synchronize];
     
-    /*-----------*/
+    //-----------------------//
     
-    //data = [data subdataWithRange:NSMakeRange(0, [data length] - 1)];
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:XMLdata];
     [parser setDelegate:self];
     BOOL isParsed = [parser parse];
-    //if (isParsed) {
-    NSLog(@"%i",isParsed);
     [self fixRSS];
     [self saveData];
     return isParsed;
 }
 
-/*   end   */
 
 
-/* delegate NSXMLParser */
+// delegate NSXMLParser
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     if ([elementName isEqualToString:@"title"]) {
@@ -163,17 +160,15 @@
     }
 }
 
-/*   end   */
+//  fix Rss UTF8
 
-/*  fix Rss UTF8   */
 -(void)fixRSS{
-    ///////////////////////
-    /// DescriptionParse //
-    ///////////////////////
+    
+    // DescriptionParse
     @autoreleasepool
     {
     DescriptionParser *parser = [[DescriptionParser alloc] init];
-    /* image */
+    // image
     
     NSMutableArray *imageTM = [[NSMutableArray alloc] init];
      
@@ -185,14 +180,14 @@
     }
         images = imageTM;
     
-    /* content */
+    // content
     NSMutableArray *contentTM = [[NSMutableArray alloc] init];
     for(int i = 0;i<descriptions.count;i++){
         [parser parserDescription:[descriptions objectAtIndex:i]];
         NSString *sContent = [parser getcontent];
         [contentTM addObject:sContent];
     }
-    /* link */
+    // link
     NSMutableArray *linkTM = [[NSMutableArray alloc] init];
     for(int i = 0;i<descriptions.count;i++){
         [parser parserDescription:[descriptions objectAtIndex:i]];
@@ -202,7 +197,7 @@
 
 
     
-    /* and fix title */
+    // fix title
     NSMutableArray *titleTMP = [[NSMutableArray alloc] init];
     NSString *t1 = @"";
     for(int i =0; i<titles.count;i++){
@@ -215,14 +210,12 @@
         }
     }
     titles = titleTMP;
-    
-    /*     ----------------------   */
-    //images = imageTM;
     contents = contentTM;
     links = linkTM;
     }
 }
 
+// endTitle in fix title
 
 -(BOOL)endTitle:(NSString *)string{
     NSString *xml = [[NSString alloc] initWithData:XMLdata encoding:NSUTF8StringEncoding];
@@ -236,7 +229,8 @@
     return  NO;
 }
 
-/* return data */
+// return data
+
 -(NSMutableArray *) arrayTitle{
     return titles;
 }
@@ -251,6 +245,5 @@
 -(NSMutableArray *) arrayLink{
     return links;
 }
-/*   end   */
 
 @end

@@ -23,10 +23,15 @@
     NSData *XMLdata;
     NSString *XMLString;
 }
+// check new RSS
 -(BOOL)haveNewRSS;
+// check data saved
 -(BOOL)haveDataSaved;
+// check connection
 -(BOOL)haveConnection;
+// parse RSS
 -(BOOL)parse;
+// value return
 -(NSMutableArray *) arrayTitle;
 -(NSMutableArray *) arrrayImage;
 -(NSMutableArray *) arrayContent;

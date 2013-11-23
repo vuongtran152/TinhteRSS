@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "DescriptionParser.h"
+#import "XMLParser.h"
 
 @interface TinhteRSSTests : XCTestCase
 
@@ -26,9 +28,22 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
 
+- (void)testXmlParser {
+    XMLParser *parser = [[XMLParser alloc] init];
+    [parser parse];
+    
+    // have connection //
+    if ([parser haveConnection]) {
+        XCTAssertNotNil([parser arrayContent], @"have connection and Content not nil!");
+    }
+    // have no connection //
+    else{
+        if ([parser haveDataSaved]) {
+            XCTAssertNotNil([parser arrayContent], @"have no connection and have data saved and Content not nil!");
+        }
+        else
+            XCTAssertNil([parser arrayContent], @"have no connection and have no data saved and Content is nil!");
+    }
+}
 @end
