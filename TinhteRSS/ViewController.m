@@ -191,16 +191,31 @@
     self.view = logoView;
     [self performSelectorInBackground:@selector(firstLoad) withObject:nil];
 }
+
+- (IBAction)zoomPicture:(id)sender {
+    if (zoomPinchGesture.state == UIGestureRecognizerStateEnded
+        || zoomPinchGesture.state == UIGestureRecognizerStateChanged) {
+        NSLog(@"gesture.scale = %f", zoomPinchGesture.scale);
+        
+        CGFloat currentScale = imageContentView.frame.size.width / imageContentView.bounds.size.width;
+        CGFloat newScale = currentScale * zoomPinchGesture.scale;
+        
+        if (newScale < 0.5) {
+            newScale = 0.5;
+        }
+        if (newScale > 2) {
+            newScale = 2;
+        }
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(newScale, newScale);
+        imageContentView.transform = transform;
+        zoomPinchGesture.scale = 1;
+    }
+}
 -(void) loadNew:(id) sender{
     
 }
 
-- (IBAction)pictureZoom:(id)sender {
-    if ([zoomPinchGesture scale]<1.0f) {
-        [zoomPinchGesture setScale:1.0f];
-    }
-    CGAffineTransform transform = CGAffineTransformMakeScale([zoomPinchGesture scale],  [zoomPinchGesture scale]);
-    imageContentView.transform = transform;
-}
+
 
 @end

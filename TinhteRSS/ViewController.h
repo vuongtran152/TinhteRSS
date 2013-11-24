@@ -35,5 +35,6 @@
 -(void) loadPage;
 - (IBAction)logoClick:(id)sender;
 - (IBAction)reLoad:(id)sender;
+- (IBAction)zoomPicture:(id)sender;
 
 @end
