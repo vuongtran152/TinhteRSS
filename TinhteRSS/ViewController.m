@@ -212,8 +212,9 @@
         zoomPinchGesture.scale = 1;
     }
 }
--(void) loadNew:(id) sender{
-    
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    CGAffineTransform transform = CGAffineTransformMakeScale(1, 1);
+    imageContentView.transform = transform;
 }
 
 

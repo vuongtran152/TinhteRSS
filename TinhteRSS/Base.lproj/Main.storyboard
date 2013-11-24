@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" id="y1a-06-lDR">
-                                <rect key="frame" x="0.0" y="301" width="320" height="219"/>
+                                <rect key="frame" x="0.0" y="300.99999968646318" width="320" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -99,6 +99,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="N0e-9f-txw" appends="YES" id="jsJ-cW-MdW"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="y1a-06-lDR" id="e6s-fG-TPQ"/>
@@ -109,7 +112,7 @@
                         <outlet property="newButton" destination="Jxr-75-sMK" id="sns-0a-yGF"/>
                         <outlet property="rightImage" destination="eG9-0Y-CH5" id="Xy4-mu-Bsg"/>
                         <outlet property="titleLabel" destination="NhK-A3-QD0" id="GkT-N8-pQA"/>
-                        <outlet property="zoomPinchGesture" destination="3bT-Wm-uY4" id="i5W-SX-Da4"/>
+                        <outlet property="zoomPinchGesture" destination="N0e-9f-txw" id="FUh-cf-McL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -134,9 +137,9 @@
                     <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
                 </view>
-                <pinchGestureRecognizer id="3bT-Wm-uY4">
+                <pinchGestureRecognizer id="N0e-9f-txw">
                     <connections>
-                        <action selector="zoomPicture:" destination="vXZ-lx-hvc" id="HIY-rY-dhV"/>
+                        <action selector="zoomPicture:" destination="vXZ-lx-hvc" id="6Wy-tN-8pe"/>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
